@@ -1,6 +1,6 @@
 const players =[
     {
-        name: "Guil",
+        name: "Guilly",
         score: 50,
         id:1
       },
@@ -42,7 +42,8 @@ const Player = (props) =>{
     )
 }
 
-const Counter = (props) =>{
+class Counter extends React.Componet {
+    render(){
     return(
         <div className="counter">
            <button className="counnter-action decrement"> - </button>
@@ -50,21 +51,23 @@ const Counter = (props) =>{
            <button className="counnter-action increment"> + </button>  
         </div>
     )
+    }
 }
+
 
 const App = (props) => {
     return (
         <div className="scoreboard">
-          <Header title="Score Board" players={1} />
+          <Header title="Score Board" players={props.initialPlayers.length} />
           {/* players list */}
-          {props.initialPlayers.map( player =>
+          {/* {props.initialPlayers.map( player =>
             <Player 
             name ={player.name}
             score={player.score}
             key ={player.id.toString()}
             />
-            )}
-          <Player score={37} name="olu" />
+            )} */}
+          <Player score={37} name="oluu" />
           
         </div>
     )
