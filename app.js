@@ -47,7 +47,7 @@ class Counter extends React.Componet {
     return(
         <div className="counter">
            <button className="counnter-action decrement"> - </button>
-           <span className="counter-score">{props.score}</span>
+           <span className="counter-score">{this.props.score}</span>
            <button className="counnter-action increment"> + </button>  
         </div>
     )
@@ -60,13 +60,13 @@ const App = (props) => {
         <div className="scoreboard">
           <Header title="Score Board" players={props.initialPlayers.length} />
           {/* players list */}
-          {/* {props.initialPlayers.map( player =>
+          { props.initialPlayers.map( player =>
             <Player 
             name ={player.name}
             score={player.score}
             key ={player.id.toString()}
             />
-            )} */}
+            )} 
           <Player score={37} name="oluu" />
           
         </div>
